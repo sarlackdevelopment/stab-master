@@ -29,8 +29,7 @@ app.post('/requests', multer({ storage: storage }).any(), (req , res) => {
     res.send(req.files)
 })
 
-app.get('/some', (res, req) => {
-    //fetch('./tests/test.json').then(data => console.log(data))
+app.get('/some', (req, res) => {
     const test = require('./tests/test.json')
-    console.log(test)
+    res.json(test)
 })
