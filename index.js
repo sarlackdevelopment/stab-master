@@ -27,9 +27,10 @@ const storage = multer.diskStorage({
 
 app.post('/requests', multer({ storage: storage }).any(), (req , res) => {
     res.send(req.files)
+    // TODO Допилить автоматический редирект на главную страницу
 })
 
 app.get('/some', (req, res) => {
-    const test = require('./tests/test.json')
+    const test = require('./requests/test.json')
     res.json(test)
 })
