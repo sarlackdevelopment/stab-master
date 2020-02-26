@@ -1,32 +1,36 @@
 const express = require('express')
 const multer  = require('multer')
+const mkdirp = require('mkdirp');
+
 const app = express()
 
 app.use(express.static(__dirname))
-app.use(multer({dest: 'requests'}).single('filedata'))
 
-const PORT = process.env.PORT || 80
-
-app.get('/', (req, res) => {
-
-    //console.log(req.query)
-
-    //res.json({message: `API has been initialized!`})
-    res.sendFile('index.html')
-})
-
-
-
-app.post("/requests", function (req, res, next) {
-   
-    const filedata = req.file;
-    console.log(filedata);
-    if(!filedata)
-        res.send("Ошибка при загрузке файла");
-    else
-        res.send("Файл загружен");
-})
+const PORT = process.env.PORT || 8080
 
 app.listen(PORT, () => {
     console.log('Сервер работает')
+})
+
+app.get('/', (req, res) => res.sendFile('index.html'))
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const dest = 'requests'
+    mkdirp(dest, (err) => {
+        if (err) cb(err, dest)
+        else cb(null, dest)
+    })
+  },
+  filename: (req, file, cb) => cb(null, file.originalname)
+})
+
+app.post('/requests', multer({ storage: storage }).any(), (req , res) => {
+    res.send(req.files)
+})
+
+app.get('/some', (res, req) => {
+    //fetch('./tests/test.json').then(data => console.log(data))
+    const test = require('./tests/test.json')
+    console.log(test)
 })
