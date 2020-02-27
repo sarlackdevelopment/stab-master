@@ -12,9 +12,20 @@ app.listen(PORT, () => {
     console.log('Сервер работает')
 })
 
-app.get('/', (req, res) => res.sendFile('index.html'))
+const createStorage = (destanation) => {
+  return multer.diskStorage({
+    destination: (req, file, cb) => {
+      const dest = destanation
+      mkdirp(dest, (err) => {
+          if (err) cb(err, dest)
+          else cb(null, dest)
+      })
+    },
+    filename: (req, file, cb) => cb(null, file.originalname)
+  })
+}
 
-const storage = multer.diskStorage({
+/* const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const dest = 'requests'
     mkdirp(dest, (err) => {
@@ -23,9 +34,18 @@ const storage = multer.diskStorage({
     })
   },
   filename: (req, file, cb) => cb(null, file.originalname)
+}) */
+
+requestsUpload = multer({ storage: createStorage('requests') })
+responsesUpload = multer({ storage: createStorage('responses') })
+
+app.get('/', (req, res) => res.sendFile('index.html'))
+
+app.post('/requests', requestsUpload.any(), (req , res) => {
+  res.redirect("/")
 })
 
-app.post('/requests', multer({ storage: storage }).any(), (req , res) => {
+app.post('/responses', responsesUpload.any(), (req , res) => {
   res.redirect("/")
 })
 
