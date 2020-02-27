@@ -25,19 +25,9 @@ const createStorage = (destanation) => {
   })
 }
 
-/* const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const dest = 'requests'
-    mkdirp(dest, (err) => {
-        if (err) cb(err, dest)
-        else cb(null, dest)
-    })
-  },
-  filename: (req, file, cb) => cb(null, file.originalname)
-}) */
-
 requestsUpload = multer({ storage: createStorage('requests') })
 responsesUpload = multer({ storage: createStorage('responses') })
+responsesСonfigs = multer({ storage: createStorage('configs') })
 
 app.get('/', (req, res) => res.sendFile('index.html'))
 
@@ -46,6 +36,10 @@ app.post('/requests', requestsUpload.any(), (req , res) => {
 })
 
 app.post('/responses', responsesUpload.any(), (req , res) => {
+  res.redirect("/")
+})
+
+app.post('/configs', responsesСonfigs.any(), (req , res) => {
   res.redirect("/")
 })
 
