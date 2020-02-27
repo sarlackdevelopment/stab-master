@@ -5,9 +5,6 @@ const mkdirp = require('mkdirp');
 const app = express()
 
 app.use(express.static(__dirname))
-/*app.use("/requests",function (request, response) {
-  response.redirect("/")
-})*/
 
 const PORT = process.env.PORT || 8080
 
@@ -29,7 +26,6 @@ const storage = multer.diskStorage({
 })
 
 app.post('/requests', multer({ storage: storage }).any(), (req , res) => {
-  //res.send(req.files)
   res.redirect("/")
 })
 
