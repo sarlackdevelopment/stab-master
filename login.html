@@ -33,14 +33,55 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <span class="navbar-nav mr-auto"></span>
-            <form action="/login" method="post" class="form-inline my-2 my-lg-0">
-                <input name="login" class="form-control mr-sm-2" type="text" placeholder="Логин">
-                <input name="password" class="form-control mr-sm-2" type="password" placeholder="Пароль">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Вперед!</button>
-            </form>
+            <span>Авторизован!</span>
         </div>
     </nav>
 
+    <section class="container mt-2">
+
+        <div class="card-group">
+
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Выбери файл настроек</h5>
+                    <form action="/configs" method="post" enctype="multipart/form-data">
+                        <input type="file" name="filedata" /><br><br>
+                        <input class="btn btn-primary btn-block" type="submit" value="Загрузить на сервер" />
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Выбери файл запросов</h5>
+                    <form action="/requests" method="post" enctype="multipart/form-data">
+                        <input type="file" name="filedata" /><br><br>
+                        <input class="btn btn-primary btn-block" type="submit" value="Загрузить на сервер" />
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Выбери файл ответов</h5>
+                    <form action="/responses" method="post" enctype="multipart/form-data">
+                        <input type="file" name="filedata" /><br><br>
+                        <input class="btn btn-primary btn-block" type="submit" value="Загрузить на сервер" />
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--<a href="/some">получить файл</a>-->
 </body>
 
 </html>
