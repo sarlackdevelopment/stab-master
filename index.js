@@ -41,7 +41,6 @@ app.post('/login', (req, res) => {
   if (user == undefined) {
     res.redirect("/error.html")
   } else {
-    //res.sendFile('login.html', { root: __dirname })
     res.redirect("/login.html")
   }
 
