@@ -1,4 +1,4 @@
-fetch('/configs/test.json')
+fetch('/configs/custom.json')
     .then(data => data.json())
     .then(data => {
         const formattedJson = JSON.stringify(data, null, 4)
@@ -6,7 +6,7 @@ fetch('/configs/test.json')
     })
     .catch(() => document.getElementById('customs').innerHTML = 'Не удалось загрузить файл')
 
-fetch('/requests/test.json')
+fetch('/requests/requests.json')
     .then(data => data.json())
     .then(data => {
         const formattedJson = JSON.stringify(data, null, 4)
@@ -14,7 +14,7 @@ fetch('/requests/test.json')
     })
     .catch(() => document.getElementById('requests').innerHTML = 'Не удалось загрузить файл')
 
-fetch('/responses/test.json')
+fetch('/responses/responses.json')
     .then(data => data.json())
     .then(data => {
         const formattedJson = JSON.stringify(data, null, 4)
