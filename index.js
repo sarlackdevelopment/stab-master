@@ -16,8 +16,8 @@ app.listen(PORT, () => {
     console.log('Сервер работает')
 })
 
-//users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
-users = [{login: 'a', password: '1'}]
+users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
+//users = [{login: 'a', password: '1'}]
 
 const createStorage = (destanation) => {
   return multer.diskStorage({
@@ -61,18 +61,15 @@ app.post('/login', verifyToken, (req, res) => {
 })
 
 app.post('/requests', requestsUpload.any(), (req , res) => {
-  res.sendStatus(200)
-  //res.redirect("/login.html")
+  res.redirect("/login.html")
 })
 
 app.post('/responses', responsesUpload.any(), (req , res) => {
-  res.sendStatus(200)
-  //res.redirect("/login.html")
+  res.redirect("/login.html")
 })
 
 app.post('/configs', responsesСonfigs.any(), (req , res) => {
-  res.sendStatus(200)
-  //res.redirect("/login.html")
+  res.redirect("/login.html")
 })
 
 app.get('/some', (req, res) => {
