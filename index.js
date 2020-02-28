@@ -61,15 +61,15 @@ app.post('/login', verifyToken, (req, res) => {
 })
 
 app.post('/requests', requestsUpload.any(), (req , res) => {
-  res.redirect("/login.html")
+  //res.redirect("/login.html")
 })
 
 app.post('/responses', responsesUpload.any(), (req , res) => {
-  res.redirect("/login.html")
+  //res.redirect("/login.html")
 })
 
 app.post('/configs', responsesСonfigs.any(), (req , res) => {
-  res.redirect("/login.html")
+  //res.redirect("/login.html")
 })
 
 app.get('/some', (req, res) => {
