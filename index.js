@@ -16,8 +16,8 @@ app.listen(PORT, () => {
     console.log('Сервер работает')
 })
 
-users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
-//users = [{login: 'a', password: '1'}]
+//users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
+users = [{login: 'a', password: '1'}]
 
 const createStorage = (destanation) => {
   return multer.diskStorage({
@@ -72,11 +72,6 @@ app.post('/configs', responsesСonfigs.any(), (req , res) => {
   res.redirect("/login.html")
 })
 
-app.get('/some', (req, res) => {
-    const test = require('./requests/test.json')
-    res.json(test)
-})
-
 function verifyToken(req, res, next) {
   // Get auth header value
   const bearerHeader = req.headers['authorization'];
@@ -96,3 +91,15 @@ function verifyToken(req, res, next) {
   }
 
 }
+
+app.get('/getConfigs', (req, res) => {
+  res.json(require('./configs/custom.json'))
+})
+
+app.get('/getRequests', (req, res) => {
+  res.json(require('./requests/requests.json'))
+})
+
+app.get('/getResponses', (req, res) => {
+  res.json(require('./responses/responses.json'))
+})
