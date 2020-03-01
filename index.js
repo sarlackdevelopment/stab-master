@@ -116,3 +116,7 @@ app.get('/getResponses', (req, res) => {
   }
 
 })
+
+app.get('/getConfig', (req, res) => {
+  res.json(require('./configs/custom.json'))
+})
