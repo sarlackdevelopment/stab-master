@@ -68,9 +68,9 @@ app.post('/responses', responsesUpload.any(), (req , res) => {
   res.redirect("/login.html")
 })
 
-/* app.post('/configs', responsesСonfigs.any(), (req , res) => {
+app.post('/configs', responsesСonfigs.any(), (req , res) => {
   res.redirect("/login.html")
-}) */
+})
 
 function verifyToken(req, res, next) {
   // Get auth header value
