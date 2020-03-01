@@ -92,14 +92,61 @@ function verifyToken(req, res, next) {
 
 }
 
-app.get('/getConfigs', (req, res) => {
+/* app.get('/getConfigs', (req, res) => {
   res.json(require('./configs/custom.json'))
-})
+}) 
 
 app.get('/getRequests', (req, res) => {
-  res.json(require('./requests/requests.json'))
-})
+
+  const requests = require('./requests/requests.json')
+  const countQuery = Object.keys(req.query).length
+
+  const targetRequest = requests.find(elem => {
+    let currentIndex = 0
+    for (let param in req.query) {
+      currentIndex++
+      if (elem[param] !== req.query[param]) {
+        return false
+      } else if (currentIndex == countQuery) {
+        return true
+      }
+    }
+  })
+
+  if (targetRequest == undefined) {
+    res.status(404).send(`Стаб файл с такими параметрами не обнаружен`);
+  } else {
+    res.json(targetRequest)
+  }
+
+}) */
 
 app.get('/getResponses', (req, res) => {
-  res.json(require('./responses/responses.json'))
+
+  const requests = require('./responses/responses.json')
+  const countQuery = Object.keys(req.query).length
+
+  const targetRequest = requests.find(elem => {
+    let currentIndex = 0
+    for (let param in req.query) {
+      currentIndex++
+      if (elem[param] !== req.query[param]) {
+        return false
+      } else if (currentIndex == countQuery) {
+        return true
+      }
+    }
+  })
+
+  if (targetRequest == undefined) {
+    res.status(404).send(`Стаб файл с такими параметрами не обнаружен`);
+  } else {
+    res.json(targetRequest)
+  }
+
+  //res.json(require('./responses/responses.json'))
 })
+
+/* app.get('/getConfigs', (req, res) => {
+  res.json(require('./configs/custom.json'))
+}) */
