@@ -60,17 +60,17 @@ app.post('/login', verifyToken, (req, res) => {
 
 })
 
-app.post('/requests', requestsUpload.any(), (req , res) => {
+/* app.post('/requests', requestsUpload.any(), (req , res) => {
   res.redirect("/login.html")
-})
+}) */
 
 app.post('/responses', responsesUpload.any(), (req , res) => {
   res.redirect("/login.html")
 })
 
-app.post('/configs', responsesСonfigs.any(), (req , res) => {
+/* app.post('/configs', responsesСonfigs.any(), (req , res) => {
   res.redirect("/login.html")
-})
+}) */
 
 function verifyToken(req, res, next) {
   // Get auth header value
@@ -91,35 +91,6 @@ function verifyToken(req, res, next) {
   }
 
 }
-
-/* app.get('/getConfigs', (req, res) => {
-  res.json(require('./configs/custom.json'))
-}) 
-
-app.get('/getRequests', (req, res) => {
-
-  const requests = require('./requests/requests.json')
-  const countQuery = Object.keys(req.query).length
-
-  const targetRequest = requests.find(elem => {
-    let currentIndex = 0
-    for (let param in req.query) {
-      currentIndex++
-      if (elem[param] !== req.query[param]) {
-        return false
-      } else if (currentIndex == countQuery) {
-        return true
-      }
-    }
-  })
-
-  if (targetRequest == undefined) {
-    res.status(404).send(`Стаб файл с такими параметрами не обнаружен`);
-  } else {
-    res.json(targetRequest)
-  }
-
-}) */
 
 app.get('/getResponses', (req, res) => {
 
@@ -144,9 +115,4 @@ app.get('/getResponses', (req, res) => {
     res.json(targetRequest)
   }
 
-  //res.json(require('./responses/responses.json'))
 })
-
-/* app.get('/getConfigs', (req, res) => {
-  res.json(require('./configs/custom.json'))
-}) */
