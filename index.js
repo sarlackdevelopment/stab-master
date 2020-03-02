@@ -16,8 +16,8 @@ app.listen(PORT, () => {
     console.log('Сервер работает')
 })
 
-//users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
-users = [{login: 'a', password: '1'}]
+users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
+//users = [{login: 'a', password: '1'}]
 
 const createStorage = (destanation) => {
   return multer.diskStorage({
