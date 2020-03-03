@@ -60,10 +60,6 @@ app.post('/login', verifyToken, (req, res) => {
 
 })
 
-/* app.post('/requests', requestsUpload.any(), (req , res) => {
-  res.redirect("/login.html")
-}) */
-
 app.post('/responses', responsesUpload.any(), (req , res) => {
   res.redirect("/login.html")
 })
@@ -101,6 +97,11 @@ app.get('/getResponses', (req, res) => {
     let currentIndex = 0
     for (let param in req.query) {
       currentIndex++
+
+      console.log(`param = ${param}`)
+      console.log(`elem[param] = ${elem[param]}`)
+      console.log(`req.query[param] = ${req.query[param]}`)
+
       if (elem[param] !== req.query[param]) {
         return false
       } else if (currentIndex == countQuery) {
