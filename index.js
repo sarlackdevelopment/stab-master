@@ -16,8 +16,8 @@ app.listen(PORT, () => {
     console.log('Сервер работает')
 })
 
-users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
-//users = [{login: 'a', password: '1'}]
+//users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
+users = [{login: 'a', password: '1'}]
 
 const createStorage = (destanation) => {
   return multer.diskStorage({
@@ -35,7 +35,6 @@ const createStorage = (destanation) => {
 requestsUpload = multer({ storage: createStorage('requests') })
 responsesUpload = multer({ storage: createStorage('responses') })
 responsesСonfigs = multer({ storage: createStorage('configs') })
-
 
 app.get('/getToken', (req, res) => {
   jwt.sign({ secret: Symbol() }, 'secretkey', (err, token) => res.json({ token }))
@@ -98,10 +97,6 @@ app.get('/getResponses', (req, res) => {
     for (let param in req.query) {
       currentIndex++
 
-      console.log(`param = ${param}`)
-      console.log(`elem[param] = ${elem[param]}`)
-      console.log(`req.query[param] = ${req.query[param]}`)
-
       if (elem[param] !== req.query[param]) {
         return false
       } else if (currentIndex == countQuery) {
@@ -111,7 +106,15 @@ app.get('/getResponses', (req, res) => {
   })
 
   if (targetRequest == undefined) {
-    res.status(404).send(`Стаб файл с такими параметрами не обнаружен`);
+    //res.status(404).send(`Стаб файл с такими параметрами не обнаружен`);
+    res.json({
+      'success': false, 
+        error: {
+          'code': -1, 
+          'text': 'По указанным параметрам не найден клиент'
+        }
+      }
+    );
   } else {
     res.json(targetRequest)
   }
