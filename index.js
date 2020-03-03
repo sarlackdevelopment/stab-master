@@ -1,5 +1,5 @@
 const express = require('express')
-const multer  = require('multer')
+const multer = require('multer')
 const mkdirp = require('mkdirp')
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken')
@@ -13,19 +13,19 @@ app.use(bodyParser.json())
 const PORT = process.env.PORT || 8080
 
 app.listen(PORT, () => {
-    console.log('Сервер работает')
+  console.log('Сервер работает')
 })
 
 //users = [{login: 'Volodya', password: 'pK893zcDhMYM'}]
-users = [{login: 'a', password: '1'}]
+users = [{ login: 'a', password: '1' }]
 
 const createStorage = (destanation) => {
   return multer.diskStorage({
     destination: (req, file, cb) => {
       const dest = destanation
       mkdirp(dest, (err) => {
-          if (err) cb(err, dest)
-          else cb(null, dest)
+        if (err) cb(err, dest)
+        else cb(null, dest)
       })
     },
     filename: (req, file, cb) => cb(null, file.originalname)
@@ -46,7 +46,7 @@ app.post('/login', verifyToken, (req, res) => {
     if (err) {
       res.sendStatus(403)
     } else {
-      const user = users.find(({login, password}) => 
+      const user = users.find(({ login, password }) =>
         login === req.body.login && password === req.body.password)
 
       if (user == undefined) {
@@ -59,11 +59,11 @@ app.post('/login', verifyToken, (req, res) => {
 
 })
 
-app.post('/responses', responsesUpload.any(), (req , res) => {
+app.post('/responses', responsesUpload.any(), (req, res) => {
   res.redirect("/login.html")
 })
 
-app.post('/configs', responsesСonfigs.any(), (req , res) => {
+app.post('/configs', responsesСonfigs.any(), (req, res) => {
   res.redirect("/login.html")
 })
 
@@ -71,7 +71,7 @@ function verifyToken(req, res, next) {
   // Get auth header value
   const bearerHeader = req.headers['authorization'];
   // Check if bearer is undefined
-  if(typeof bearerHeader !== 'undefined') {
+  if (typeof bearerHeader !== 'undefined') {
     // Split at the space
     const bearer = bearerHeader.split(' ');
     // Get token from array
@@ -89,33 +89,44 @@ function verifyToken(req, res, next) {
 
 app.get('/getResponses', (req, res) => {
 
-  const requests = require('./responses/responses.json')
-  const countQuery = Object.keys(req.query).length
+  try {
+    const requests = require('./responses/responses.json')
+    const countQuery = Object.keys(req.query).length
 
-  const targetRequest = requests.find(elem => {
-    let currentIndex = 0
-    for (let param in req.query) {
-      currentIndex++
+    const targetRequest = requests.find(elem => {
+      let currentIndex = 0
+      for (let param in req.query) {
+        currentIndex++
 
-      if (elem[param] !== req.query[param]) {
-        return false
-      } else if (currentIndex == countQuery) {
-        return true
+        if (elem[param] !== req.query[param]) {
+          return false
+        } else if (currentIndex == countQuery) {
+          return true
+        }
       }
-    }
-  })
+    })
 
-  if (targetRequest == undefined) {
-    res.json({
-      'success': false, 
+    if (targetRequest == undefined) {
+      res.json({
+        'success': false,
         error: {
-          'code': -1, 
+          'code': -1,
           'text': 'По указанным параметрам не найден клиент'
         }
       }
-    );
-  } else {
-    res.json(targetRequest)
+      );
+    } else {
+      res.json(targetRequest)
+    }
+
+  } catch (e) {
+    res.json({
+      'success': false,
+      error: {
+        'code': 500,
+        'text': e.message
+      }
+    });
   }
 
 })
