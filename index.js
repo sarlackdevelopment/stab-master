@@ -106,7 +106,6 @@ app.get('/getResponses', (req, res) => {
   })
 
   if (targetRequest == undefined) {
-    //res.status(404).send(`Стаб файл с такими параметрами не обнаружен`);
     res.json({
       'success': false, 
         error: {
