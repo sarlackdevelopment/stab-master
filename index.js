@@ -111,6 +111,7 @@ app.get('/getResponses', (req, res) => {
         'success': false,
         error: {
           'code': -1,
+          'HTTP_Status': 200,
           'text': 'По указанным параметрам не найден клиент'
         }
       }
@@ -123,7 +124,8 @@ app.get('/getResponses', (req, res) => {
     res.json({
       'success': false,
       error: {
-        'code': 500,
+        'code': 1,
+        'HTTP_Status': 500,
         'text': e.message
       }
     });
