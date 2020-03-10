@@ -109,7 +109,7 @@ app.get('/getResponses', (req, res) => {
     if (targetRequest == undefined) {
       res.json({
         'success': false,
-        error: {
+        'data': {
           'code': -1,
           'HTTP_Status': 200,
           'text': 'По указанным параметрам не найден клиент'
@@ -123,7 +123,7 @@ app.get('/getResponses', (req, res) => {
   } catch (e) {
     res.json({
       'success': false,
-      error: {
+      'data': {
         'code': 1,
         'HTTP_Status': 500,
         'text': e.message
