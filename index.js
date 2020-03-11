@@ -32,8 +32,6 @@ const createStorage = (destanation) => {
   })
 }
 
-//1
-
 requestsUpload = multer({ storage: createStorage('requests') })
 responsesUpload = multer({ storage: createStorage('responses') })
 responsesСonfigs = multer({ storage: createStorage('configs') })
