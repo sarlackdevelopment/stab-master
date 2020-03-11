@@ -1,0 +1,9 @@
+FROM alpine
+
+RUN apk add git && apk add npm && git clone https://github.com/sarlackdevelopment/stab-master.git && cd stab-master && npm i
+
+WORKDIR ./stab-master
+
+CMD npm i
+
+EXPOSE 3000
