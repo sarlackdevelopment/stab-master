@@ -32,9 +32,9 @@ const createStorage = (destanation) => {
   })
 }
 
-requestsUpload = multer({ storage: createStorage('requests') })
+responsesLauncher = multer({ storage: createStorage('launcher') })
+responsesMainScript = multer({ storage: createStorage('mainScript') })
 responsesUpload = multer({ storage: createStorage('responses') })
-responsesСonfigs = multer({ storage: createStorage('configs') })
 
 app.get('/getToken', (req, res) => {
   jwt.sign({ secret: Symbol() }, 'secretkey', (err, token) => res.json({ token }))
@@ -59,11 +59,15 @@ app.post('/login', verifyToken, (req, res) => {
 
 })
 
-app.post('/responses', responsesUpload.any(), (req, res) => {
+app.post('/launcher', responsesLauncher.any(), (req, res) => {
   res.redirect("/login.html")
 })
 
-app.post('/configs', responsesСonfigs.any(), (req, res) => {
+app.post('/mainScript', responsesMainScript.any(), (req, res) => {
+  res.redirect("/login.html")
+})
+
+app.post('/responses', responsesUpload.any(), (req, res) => {
   res.redirect("/login.html")
 })
 
@@ -133,6 +137,10 @@ app.get('/getResponses', (req, res) => {
 
 })
 
-app.get('/getConfig', (req, res) => {
-  res.json(require('./configs/custom.json'))
+app.get('/getLauncher', (req, res) => {
+  res.json(require('./launcher/launcher.json'))
+})
+
+app.get('/mainScript', (req, res) => {
+  res.json(require('./mainScript/mainScript.json'))
 })

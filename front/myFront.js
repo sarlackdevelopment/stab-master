@@ -1,18 +1,18 @@
-fetch('/configs/custom.json')
+fetch('/launcher/SC0.json')
     .then(data => data.json())
     .then(data => {
         const formattedJson = JSON.stringify(data, null, 4)
-        document.getElementById('customs').innerHTML += `<pre>${formattedJson}</pre>`
+        document.getElementById('launcher').innerHTML += `<pre>${formattedJson}</pre>`
     })
-    .catch(() => document.getElementById('customs').innerHTML = 'Не удалось загрузить файл')
+    .catch(() => document.getElementById('launcher').innerHTML = 'Не удалось загрузить файл')
 
-fetch('/requests/requests.json')
+fetch('/mainScript/SC_CHECKS.json')
     .then(data => data.json())
     .then(data => {
         const formattedJson = JSON.stringify(data, null, 4)
-        document.getElementById('requests').innerHTML += `<pre>${formattedJson}</pre>`
+        document.getElementById('mainScript').innerHTML += `<pre>${formattedJson}</pre>`
     })
-    .catch(() => document.getElementById('requests').innerHTML = 'Не удалось загрузить файл')
+    .catch(() => document.getElementById('mainScript').innerHTML = 'Не удалось загрузить файл')
 
 fetch('/responses/responses.json')
     .then(data => data.json())

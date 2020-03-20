@@ -1,0 +1,3756 @@
+{
+    "subject": "SC_CHECKS_v2",
+    "label": "SC_CHECKS_v2",
+    "blocks": [
+        {
+            "id": "9eb588fc-e82f-4328-9766-a6a5d7b65c11",
+            "type": "START",
+            "name": "Начало",
+            "comment": "",
+            "x": 310.5372241008785,
+            "y": 219.98881607469377,
+            "nextId": "bab2512a-baab-4a8a-8aad-1c467d592018",
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "e071cb2f-3471-43e3-80ba-adbdbe7c88f0",
+            "type": "ROUTER",
+            "name": "Выбор шага",
+            "comment": "",
+            "x": 577.4747906396715,
+            "y": 198.06364992290207,
+            "nextId": "b3a875d9-0d26-4032-9d2d-f61757c34aa4",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "b3a875d9-0d26-4032-9d2d-f61757c34aa4",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "step"
+                            },
+                            {
+                                "t": "k",
+                                "v": "1"
+                            }
+                        ]
+                    },
+                    "original": "step = '1'"
+                },
+                {
+                    "nextId": "025b5439-3678-4146-8a6f-a256a4840e4c",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "step"
+                            },
+                            {
+                                "t": "k",
+                                "v": "2"
+                            }
+                        ]
+                    },
+                    "original": "step = '2'"
+                },
+                {
+                    "nextId": "4d9a9fd6-ccb3-447e-817f-64dc5fe36ba4",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "step"
+                            },
+                            {
+                                "t": "k",
+                                "v": "3"
+                            }
+                        ]
+                    },
+                    "original": "step = '3'"
+                }
+            ]
+        },
+        {
+            "id": "ef4d299e-f961-4689-aa13-d814b59710dd",
+            "type": "CALC",
+            "name": "sc_checks_step1",
+            "comment": "",
+            "x": 1684.0366170491486,
+            "y": 22.009538950715402,
+            "nextId": "eaaa1aa7-b4ef-4f72-b481-063a374126a1",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "step",
+                    "original": "'2'",
+                    "expression": {
+                        "t": "k",
+                        "v": "2"
+                    }
+                },
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "true",
+                    "expression": {
+                        "t": "b",
+                        "v": "a"
+                    }
+                },
+                {
+                    "contextName": "req_text2",
+                    "original": "'{\"inn\":\"' + inn +'\", \"kpp\":\"' + kpp +'\"}'",
+                    "expression": {
+                        "t": "j",
+                        "v": "a",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "a",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "a",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "a",
+                                                "a": [
+                                                    {
+                                                        "t": "k",
+                                                        "v": "{\"inn\":\""
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "inn"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "k",
+                                                "v": "\", \"kpp\":\""
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "kpp"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": "\"}"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "req_text",
+                    "original": "'inn=' + inn + '&' + 'kpp=' + kpp",
+                    "expression": {
+                        "t": "j",
+                        "v": "a",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "a",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "a",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "a",
+                                                "a": [
+                                                    {
+                                                        "t": "k",
+                                                        "v": "inn="
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "inn"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "k",
+                                                "v": "&"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "k",
+                                        "v": "kpp="
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "d",
+                                "v": "kpp"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "req_code",
+                    "original": "'ext_chk_1'",
+                    "expression": {
+                        "t": "k",
+                        "v": "ext_chk_1"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "eaaa1aa7-b4ef-4f72-b481-063a374126a1",
+            "type": "STOP",
+            "name": "Конец первого шага",
+            "comment": "",
+            "x": 1885.7445998831204,
+            "y": 97.82580823290186,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "50bcdb05-89cd-40d9-9114-b65f090c1bb3",
+            "type": "CALC",
+            "name": "sc_checks_step3",
+            "comment": "",
+            "x": 956.68293174422,
+            "y": 453.43990746719965,
+            "nextId": "e8a40533-d4f5-4a8f-95a9-8c5a838f86ce",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'End'",
+                    "expression": {
+                        "t": "k",
+                        "v": "End"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "4d9a9fd6-ccb3-447e-817f-64dc5fe36ba4",
+            "type": "SCREEN",
+            "name": "Экран завершения",
+            "comment": "",
+            "x": 798.9941049312035,
+            "y": 443.2150867745527,
+            "nextId": "50bcdb05-89cd-40d9-9114-b65f090c1bb3",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Работа сценария завершена.",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Результат внешних проверок: ${sc_response}",
+                            "type": "template",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                }
+            ],
+            "visibility": [],
+            "hasBack": false,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "1dfa0de9-5b52-4219-861a-752174eaae12",
+            "type": "SCREEN",
+            "name": "Экран шаг 2 показ данных",
+            "comment": "",
+            "x": 1535.2166705741126,
+            "y": 251.41612922847173,
+            "nextId": "f32d4ef8-e5a0-4f59-9ca9-bb4ff57267c5",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Сведения об организации из ЕГР по ИНН ${inn}",
+                            "type": "template",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "TextBlock",
+                    "props": [
+                        {
+                            "value": "ul_egr_info",
+                            "type": "link",
+                            "name": "text"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "Switch",
+                    "props": [
+                        {
+                            "value": "Данные выгруженные из ЕГРЮЛ/ЕГРИП совпадают с предоставленными документами Клиента?",
+                            "type": "string",
+                            "name": "label"
+                        }
+                    ],
+                    "rowNumber": 1,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": [],
+                    "contextName": "egr_info_is_agreeded",
+                    "isRequired": true
+                }
+            ],
+            "visibility": [
+                {
+                    "rowNumber": 1,
+                    "original": "response.body?unreliableInformation <> \"1true\"",
+                    "expression": {
+                        "t": "j",
+                        "v": "h",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "r",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "unreliableInformation"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": "1true"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "hasBack": true,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "3cdf1742-2af0-4cc0-bf65-948202d9cf27",
+            "type": "SCREEN",
+            "name": "Экран Ввод ИНН Шаг 1",
+            "comment": "",
+            "x": 1483.3689027419152,
+            "y": 31.369156795614934,
+            "nextId": "ef4d299e-f961-4689-aa13-d814b59710dd",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "TextBlock",
+                    "props": [
+                        {
+                            "value": "Введите ИНН",
+                            "type": "string",
+                            "name": "text"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "TextInputBlock",
+                    "props": [],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": [
+                        {
+                            "original": "size(inn) = 10 | size(inn) = 12",
+                            "message": "Введите корректный ИНН",
+                            "expression": {
+                                "t": "j",
+                                "v": "f",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "g",
+                                        "a": [
+                                            {
+                                                "t": "e",
+                                                "v": "size",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "inn"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "h",
+                                                "v": "10"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "j",
+                                        "v": "g",
+                                        "a": [
+                                            {
+                                                "t": "e",
+                                                "v": "size",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "inn"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "h",
+                                                "v": "12"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "contextName": "inn",
+                    "isRequired": true
+                },
+                {
+                    "component": "TextBlock",
+                    "props": [
+                        {
+                            "value": "Введите КПП",
+                            "type": "string",
+                            "name": "text"
+                        }
+                    ],
+                    "rowNumber": 1,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "TextInputBlock",
+                    "props": [],
+                    "rowNumber": 1,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": [],
+                    "contextName": "kpp",
+                    "isRequired": true
+                }
+            ],
+            "visibility": [
+                {
+                    "rowNumber": 0,
+                    "original": "true | size(inn) <> 10 & size(inn) <> 12",
+                    "expression": {
+                        "t": "j",
+                        "v": "f",
+                        "a": [
+                            {
+                                "t": "b",
+                                "v": "a"
+                            },
+                            {
+                                "t": "j",
+                                "v": "e",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "h",
+                                        "a": [
+                                            {
+                                                "t": "e",
+                                                "v": "size",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "inn"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "h",
+                                                "v": "10"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "j",
+                                        "v": "h",
+                                        "a": [
+                                            {
+                                                "t": "e",
+                                                "v": "size",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "inn"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "h",
+                                                "v": "12"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "rowNumber": 1,
+                    "original": "size(inn) = 10",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "size",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "inn"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "h",
+                                "v": "10"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "hasBack": true,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "bab2512a-baab-4a8a-8aad-1c467d592018",
+            "type": "CALC",
+            "name": "Init",
+            "comment": "",
+            "x": 401.63158111991896,
+            "y": 74.39064138836238,
+            "nextId": "e071cb2f-3471-43e3-80ba-adbdbe7c88f0",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "if(!isNull(next_scenario), next_scenario, '')",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "n",
+                                "a": [
+                                    {
+                                        "t": "e",
+                                        "v": "isNull",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "next_scenario"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "d",
+                                "v": "next_scenario"
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "if(isNull(step), '1', step)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "step"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": "1"
+                            },
+                            {
+                                "t": "d",
+                                "v": "step"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "if(isNull(req_send), false, req_send)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "req_send"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "b",
+                                "v": "b"
+                            },
+                            {
+                                "t": "d",
+                                "v": "req_send"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "req_text",
+                    "original": "if(isNull(req_text), '', req_text)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "req_text"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "d",
+                                "v": "req_text"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "req_code",
+                    "original": "if(isNull(req_code), '', req_code)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "req_code"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "d",
+                                "v": "req_code"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "inn",
+                    "original": "if(isNull(inn), '', inn)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "inn"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "d",
+                                "v": "inn"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "kpp",
+                    "original": "if(isNull(kpp), '', kpp)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "kpp"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "d",
+                                "v": "kpp"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "crLf",
+                    "original": "'\n'",
+                    "expression": {
+                        "t": "k",
+                        "v": "\n"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "if(!isNull(sc_response), sc_response, \n{code: '0', message:''})",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "n",
+                                "a": [
+                                    {
+                                        "t": "e",
+                                        "v": "isNull",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "sc_response"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "d",
+                                "v": "sc_response"
+                            },
+                            {
+                                "t": "i",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "o",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "code"
+                                            },
+                                            {
+                                                "t": "k",
+                                                "v": "0"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "j",
+                                        "v": "o",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "message"
+                                            },
+                                            {
+                                                "t": "k",
+                                                "v": ""
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "out_of_office",
+                    "original": "if(isNull(out_of_office), false, out_of_office)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "out_of_office"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "b",
+                                "v": "b"
+                            },
+                            {
+                                "t": "d",
+                                "v": "out_of_office"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "HTTP_Status",
+                    "original": "if(isNull(HTTP_Status), 200, HTTP_Status)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "HTTP_Status"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "h",
+                                "v": "200"
+                            },
+                            {
+                                "t": "d",
+                                "v": "HTTP_Status"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "egr_info_is_agreeded",
+                    "original": "if(isNull(egr_info_is_agreeded), false, egr_info_is_agreeded)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "egr_info_is_agreeded"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "b",
+                                "v": "b"
+                            },
+                            {
+                                "t": "d",
+                                "v": "egr_info_is_agreeded"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "isUL",
+                    "original": "if(size(inn) = 10, true, false)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "g",
+                                "a": [
+                                    {
+                                        "t": "e",
+                                        "v": "size",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "inn"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "h",
+                                        "v": "10"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "b",
+                                "v": "a"
+                            },
+                            {
+                                "t": "b",
+                                "v": "b"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "egr",
+                    "original": "if(isNull(response?body?egr), 'false', response.body.egr)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "egr"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": "false"
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "egr"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "b3a875d9-0d26-4032-9d2d-f61757c34aa4",
+            "type": "ROUTER",
+            "name": "Проверка ИНН и КПП",
+            "comment": "",
+            "x": 1279.496076508608,
+            "y": 50,
+            "nextId": "3cdf1742-2af0-4cc0-bf65-948202d9cf27",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "ef4d299e-f961-4689-aa13-d814b59710dd",
+                    "expression": {
+                        "t": "j",
+                        "v": "f",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "e",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "g",
+                                        "a": [
+                                            {
+                                                "t": "e",
+                                                "v": "size",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "inn"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "h",
+                                                "v": "10"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "j",
+                                        "v": "g",
+                                        "a": [
+                                            {
+                                                "t": "e",
+                                                "v": "size",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "kpp"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "h",
+                                                "v": "8"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "j",
+                                "v": "g",
+                                "a": [
+                                    {
+                                        "t": "e",
+                                        "v": "size",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "inn"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "h",
+                                        "v": "12"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "original": "size(inn) = 10 & size(kpp) = 8 | \nsize(inn) = 12"
+                }
+            ]
+        },
+        {
+            "id": "d6bbc388-5607-4a6c-b8b0-d1bd8db244b8",
+            "type": "CALC",
+            "name": "Анализ ответа",
+            "comment": "",
+            "x": 1349.9845560431868,
+            "y": 258.1245988593841,
+            "nextId": "1dfa0de9-5b52-4219-861a-752174eaae12",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "ul_egr_info",
+                    "original": "'Название организации: ' + response.body?legalname \n+ crLf\n+ 'Список учредителей: ' \n    + if(isNull(response.body?legalauthorities), 'Информация об учредителях отсутствует', \n            toString(foldLeft(response.body?legalauthorities, [$i, $elem, $res], if($i > 0, $res + '; ' + crLf + $elem?fio, toString($elem?fio)), '')))\n+ crLf\n+ 'ОГРН: ' + response.body?ogrn",
+                    "expression": {
+                        "t": "j",
+                        "v": "a",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "a",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "a",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "a",
+                                                "a": [
+                                                    {
+                                                        "t": "j",
+                                                        "v": "a",
+                                                        "a": [
+                                                            {
+                                                                "t": "j",
+                                                                "v": "a",
+                                                                "a": [
+                                                                    {
+                                                                        "t": "j",
+                                                                        "v": "a",
+                                                                        "a": [
+                                                                            {
+                                                                                "t": "k",
+                                                                                "v": "Название организации: "
+                                                                            },
+                                                                            {
+                                                                                "t": "j",
+                                                                                "v": "r",
+                                                                                "a": [
+                                                                                    {
+                                                                                        "t": "j",
+                                                                                        "v": "p",
+                                                                                        "a": [
+                                                                                            {
+                                                                                                "t": "d",
+                                                                                                "v": "response"
+                                                                                            },
+                                                                                            {
+                                                                                                "t": "d",
+                                                                                                "v": "body"
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "t": "d",
+                                                                                        "v": "legalname"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "t": "d",
+                                                                        "v": "crLf"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "t": "k",
+                                                                "v": "Список учредителей: "
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "t": "e",
+                                                        "v": "if",
+                                                        "a": [
+                                                            {
+                                                                "t": "e",
+                                                                "v": "isNull",
+                                                                "a": [
+                                                                    {
+                                                                        "t": "j",
+                                                                        "v": "r",
+                                                                        "a": [
+                                                                            {
+                                                                                "t": "j",
+                                                                                "v": "p",
+                                                                                "a": [
+                                                                                    {
+                                                                                        "t": "d",
+                                                                                        "v": "response"
+                                                                                    },
+                                                                                    {
+                                                                                        "t": "d",
+                                                                                        "v": "body"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "t": "d",
+                                                                                "v": "legalauthorities"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "t": "k",
+                                                                "v": "Информация об учредителях отсутствует"
+                                                            },
+                                                            {
+                                                                "t": "e",
+                                                                "v": "toString",
+                                                                "a": [
+                                                                    {
+                                                                        "t": "e",
+                                                                        "v": "foldLeft",
+                                                                        "a": [
+                                                                            {
+                                                                                "t": "j",
+                                                                                "v": "r",
+                                                                                "a": [
+                                                                                    {
+                                                                                        "t": "j",
+                                                                                        "v": "p",
+                                                                                        "a": [
+                                                                                            {
+                                                                                                "t": "d",
+                                                                                                "v": "response"
+                                                                                            },
+                                                                                            {
+                                                                                                "t": "d",
+                                                                                                "v": "body"
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "t": "d",
+                                                                                        "v": "legalauthorities"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "t": "a",
+                                                                                "a": [
+                                                                                    {
+                                                                                        "t": "f",
+                                                                                        "v": "$i"
+                                                                                    },
+                                                                                    {
+                                                                                        "t": "f",
+                                                                                        "v": "$elem"
+                                                                                    },
+                                                                                    {
+                                                                                        "t": "f",
+                                                                                        "v": "$res"
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "t": "e",
+                                                                                "v": "if",
+                                                                                "a": [
+                                                                                    {
+                                                                                        "t": "j",
+                                                                                        "v": "j",
+                                                                                        "a": [
+                                                                                            {
+                                                                                                "t": "f",
+                                                                                                "v": "$i"
+                                                                                            },
+                                                                                            {
+                                                                                                "t": "h",
+                                                                                                "v": "0"
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "t": "j",
+                                                                                        "v": "a",
+                                                                                        "a": [
+                                                                                            {
+                                                                                                "t": "j",
+                                                                                                "v": "a",
+                                                                                                "a": [
+                                                                                                    {
+                                                                                                        "t": "j",
+                                                                                                        "v": "a",
+                                                                                                        "a": [
+                                                                                                            {
+                                                                                                                "t": "f",
+                                                                                                                "v": "$res"
+                                                                                                            },
+                                                                                                            {
+                                                                                                                "t": "k",
+                                                                                                                "v": "; "
+                                                                                                            }
+                                                                                                        ]
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "t": "d",
+                                                                                                        "v": "crLf"
+                                                                                                    }
+                                                                                                ]
+                                                                                            },
+                                                                                            {
+                                                                                                "t": "j",
+                                                                                                "v": "r",
+                                                                                                "a": [
+                                                                                                    {
+                                                                                                        "t": "f",
+                                                                                                        "v": "$elem"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "t": "d",
+                                                                                                        "v": "fio"
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    },
+                                                                                    {
+                                                                                        "t": "e",
+                                                                                        "v": "toString",
+                                                                                        "a": [
+                                                                                            {
+                                                                                                "t": "j",
+                                                                                                "v": "r",
+                                                                                                "a": [
+                                                                                                    {
+                                                                                                        "t": "f",
+                                                                                                        "v": "$elem"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "t": "d",
+                                                                                                        "v": "fio"
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "t": "k",
+                                                                                "v": ""
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "crLf"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "k",
+                                        "v": "ОГРН: "
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "j",
+                                "v": "r",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "ogrn"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "f32d4ef8-e5a0-4f59-9ca9-bb4ff57267c5",
+            "type": "ROUTER",
+            "name": "Проверка достоверности св",
+            "comment": "",
+            "x": 1696.02324657006,
+            "y": 252.6770538243626,
+            "nextId": "5462074a-13df-4133-8db1-97151cf76db6",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "00d7f575-1496-4422-ac9a-5ec0bc1343df",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "egr_info_is_agreeded"
+                            },
+                            {
+                                "t": "b",
+                                "v": "a"
+                            }
+                        ]
+                    },
+                    "original": "egr_info_is_agreeded = true"
+                }
+            ]
+        },
+        {
+            "id": "4a35b52f-1140-4700-9986-ee44b5eb97fa",
+            "type": "CALC",
+            "name": "sc_checks_reject",
+            "comment": "",
+            "x": 2049.3947775447955,
+            "y": 235.81001192142074,
+            "nextId": "8d6e216a-23c1-41a3-8c3a-f57eb35f5a12",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "'Расхождение с ЕГР'",
+                    "expression": {
+                        "t": "k",
+                        "v": "Расхождение с ЕГР"
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "'3'",
+                    "expression": {
+                        "t": "k",
+                        "v": "3"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "025b5439-3678-4146-8a6f-a256a4840e4c",
+            "type": "ROUTER",
+            "name": "Проверка стутуса внешнего вызова",
+            "comment": "",
+            "x": 768.2713103010841,
+            "y": 244.64077353264463,
+            "nextId": "7e7e05c2-7c9b-46ab-8402-ee31971b6197",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "386d73d3-ae99-4cf4-843a-744783d7acd9",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "HTTP_Status"
+                            },
+                            {
+                                "t": "h",
+                                "v": "200"
+                            }
+                        ]
+                    },
+                    "original": "HTTP_Status = 200"
+                }
+            ]
+        },
+        {
+            "id": "386d73d3-ae99-4cf4-843a-744783d7acd9",
+            "type": "ROUTER",
+            "name": "Проверка статуса полученных данных",
+            "comment": "",
+            "x": 967.5729724595624,
+            "y": 247.7042970903201,
+            "nextId": "7e7e05c2-7c9b-46ab-8402-ee31971b6197",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "330009bc-b71c-493a-b837-f840ec1c6b28",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "response"
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "success"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "b",
+                                "v": "a"
+                            }
+                        ]
+                    },
+                    "original": "response.success = true"
+                }
+            ]
+        },
+        {
+            "id": "00d7f575-1496-4422-ac9a-5ec0bc1343df",
+            "type": "CALC",
+            "name": "Построение сообщения с ошибкой",
+            "comment": "",
+            "x": 384.22888696659624,
+            "y": 812.0304482162857,
+            "nextId": "b918990f-656d-42ec-acc9-250f759a6f74",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "no_egr_message",
+                    "original": "'Не удалось получить выписку.' + crLf + 'Выгрузите выписку ЕГРЮЛ/ЕГРИП в ручном режиме. Продолжить ввод данных клиента из выписки ЕГРЮЛ/ЕГРИП?'",
+                    "expression": {
+                        "t": "j",
+                        "v": "a",
+                        "a": [
+                            {
+                                "t": "j",
+                                "v": "a",
+                                "a": [
+                                    {
+                                        "t": "k",
+                                        "v": "Не удалось получить выписку."
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "crLf"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": "Выгрузите выписку ЕГРЮЛ/ЕГРИП в ручном режиме. Продолжить ввод данных клиента из выписки ЕГРЮЛ/ЕГРИП?"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "continue_by_hand",
+                    "original": "if(isNull(continue_by_hand), 'true', continue_by_hand)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "continue_by_hand"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": "true"
+                            },
+                            {
+                                "t": "d",
+                                "v": "continue_by_hand"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "unreliableInformation",
+                    "original": "if(isNull(response?body?unreliableInformation), '', response.body.unreliableInformation)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "unreliableInformation"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "unreliableInformation"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "falseinfo",
+                    "original": "if(isNull(response?body?falseinfo), '', response.body.falseinfo)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "falseinfo"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "falseinfo"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "liquidation",
+                    "original": "if(isNull(response?body?liquidation), '', response.body.liquidation)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "liquidation"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "liquidation"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "InfoFalse",
+                    "original": "if(isNull(response?body?InfoFalse), '', response.body.InfoFalse)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "InfoFalse"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "InfoFalse"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "bankinform",
+                    "original": "if(isNull(response?body?bankinform), '', response.body.bankinform)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "bankinform"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "bankinform"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "FCSConstraint",
+                    "original": "if(isNull(response?body?FCSConstraint), '', response.body.FCSConstraint)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "FCSConstraint"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "FCSConstraint"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "MFOConstraint",
+                    "original": "if(isNull(response?body?MFOConstraint), '', response.body.MFOConstraint)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "MFOConstraint"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "MFOConstraint"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "bankrotstvo",
+                    "original": "if(isNull(response?body?bankrotstvo), '', response.body.bankrotstvo)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "bankrotstvo"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "bankrotstvo"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "contextName": "arbitr",
+                    "original": "if(isNull(response?body?arbitr), '', response.body.arbitr)",
+                    "expression": {
+                        "t": "e",
+                        "v": "if",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "isNull",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "r",
+                                        "a": [
+                                            {
+                                                "t": "j",
+                                                "v": "r",
+                                                "a": [
+                                                    {
+                                                        "t": "d",
+                                                        "v": "response"
+                                                    },
+                                                    {
+                                                        "t": "d",
+                                                        "v": "body"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "arbitr"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            },
+                            {
+                                "t": "j",
+                                "v": "p",
+                                "a": [
+                                    {
+                                        "t": "j",
+                                        "v": "p",
+                                        "a": [
+                                            {
+                                                "t": "d",
+                                                "v": "response"
+                                            },
+                                            {
+                                                "t": "d",
+                                                "v": "body"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "t": "d",
+                                        "v": "arbitr"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "7e7e05c2-7c9b-46ab-8402-ee31971b6197",
+            "type": "ROUTER",
+            "name": "Проверка на ВКМ",
+            "comment": "",
+            "x": 1373.1113462387762,
+            "y": 545.6421685149612,
+            "nextId": "b0af94cd-4b7f-4df7-bab3-13db98810158",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "6380b54b-0989-4442-9c7b-4c66c45f1eb5",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "out_of_office"
+                            },
+                            {
+                                "t": "b",
+                                "v": "b"
+                            }
+                        ]
+                    },
+                    "original": "out_of_office = false"
+                }
+            ]
+        },
+        {
+            "id": "b0af94cd-4b7f-4df7-bab3-13db98810158",
+            "type": "SCREEN",
+            "name": "Предупреждение ВКМ",
+            "comment": "",
+            "x": 1559.0229028797396,
+            "y": 530.1581008200809,
+            "nextId": "9cd21199-9a72-4534-a429-cda8bf93b25b",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Не удалось провести проверки по внешним источникам. Так как вы находитесь на выезде автоматически будет сформировано письмо в ЦКР для проведения проверок.",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                }
+            ],
+            "visibility": [],
+            "hasBack": true,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "330009bc-b71c-493a-b837-f840ec1c6b28",
+            "type": "ROUTER",
+            "name": "Наличие ЕГР",
+            "comment": "",
+            "x": 1162.174242984289,
+            "y": 251.9580217477424,
+            "nextId": "7e7e05c2-7c9b-46ab-8402-ee31971b6197",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "d6bbc388-5607-4a6c-b8b0-d1bd8db244b8",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "egr"
+                            },
+                            {
+                                "t": "k",
+                                "v": "true"
+                            }
+                        ]
+                    },
+                    "original": "egr = 'true'"
+                }
+            ]
+        },
+        {
+            "id": "b918990f-656d-42ec-acc9-250f759a6f74",
+            "type": "ROUTER",
+            "name": "unreliableInformation",
+            "comment": "",
+            "x": 613.1112182158581,
+            "y": 917.1207103303489,
+            "nextId": "31f7a468-df24-4608-9866-c5b98108293b",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "fb42c307-24fb-4f8e-9971-2d34af487f70",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "unreliableInformation"
+                            },
+                            {
+                                "t": "k",
+                                "v": "false"
+                            }
+                        ]
+                    },
+                    "original": "unreliableInformation = 'false'"
+                },
+                {
+                    "nextId": "4e873f44-f70c-4992-af17-dc31c7569f02",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "unreliableInformation"
+                            },
+                            {
+                                "t": "k",
+                                "v": "true"
+                            }
+                        ]
+                    },
+                    "original": "unreliableInformation = 'true'"
+                },
+                {
+                    "nextId": "31f7a468-df24-4608-9866-c5b98108293b",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "unreliableInformation"
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            }
+                        ]
+                    },
+                    "original": "unreliableInformation = ''"
+                }
+            ]
+        },
+        {
+            "id": "fb42c307-24fb-4f8e-9971-2d34af487f70",
+            "type": "ROUTER",
+            "name": "liquidation",
+            "comment": "",
+            "x": 1154.7572410961163,
+            "y": 921.5431768929335,
+            "nextId": "2ed6feca-61ca-4ff0-a59f-4b0d89878275",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "bca798e3-dab5-44bd-91e6-267d1dec6c04",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "liquidation"
+                            },
+                            {
+                                "t": "k",
+                                "v": "false"
+                            }
+                        ]
+                    },
+                    "original": "liquidation = 'false'"
+                },
+                {
+                    "nextId": "18f45467-afdd-4d28-9a79-82d53b407bc1",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "liquidation"
+                            },
+                            {
+                                "t": "k",
+                                "v": "true"
+                            }
+                        ]
+                    },
+                    "original": "liquidation = 'true'"
+                },
+                {
+                    "nextId": "2ed6feca-61ca-4ff0-a59f-4b0d89878275",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "liquidation"
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            }
+                        ]
+                    },
+                    "original": "liquidation = ''"
+                }
+            ]
+        },
+        {
+            "id": "bca798e3-dab5-44bd-91e6-267d1dec6c04",
+            "type": "ROUTER",
+            "name": "isUL",
+            "comment": "",
+            "x": 1780.8898520441096,
+            "y": 959.9356572470583,
+            "nextId": "4ef1ed00-26df-4bf3-851b-c7ff365646d5",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "ec1d8bcd-fd7e-49d7-869a-d44689ab811f",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "e",
+                                "v": "size",
+                                "a": [
+                                    {
+                                        "t": "d",
+                                        "v": "inn"
+                                    }
+                                ]
+                            },
+                            {
+                                "t": "h",
+                                "v": "10"
+                            }
+                        ]
+                    },
+                    "original": "size(inn) = 10"
+                }
+            ]
+        },
+        {
+            "id": "ec1d8bcd-fd7e-49d7-869a-d44689ab811f",
+            "type": "ROUTER",
+            "name": "InfoFalse",
+            "comment": "",
+            "x": 2019.0157319349257,
+            "y": 1057.8493737337599,
+            "nextId": "0365e2b7-92fa-40f9-844e-ddcc2ce3ec48",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "4ef1ed00-26df-4bf3-851b-c7ff365646d5",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "InfoFalse"
+                            },
+                            {
+                                "t": "k",
+                                "v": "false"
+                            }
+                        ]
+                    },
+                    "original": "InfoFalse = 'false'"
+                },
+                {
+                    "nextId": "12ff5943-68f1-4141-b029-fdf4e3e9663d",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "InfoFalse"
+                            },
+                            {
+                                "t": "k",
+                                "v": "true"
+                            }
+                        ]
+                    },
+                    "original": "InfoFalse = 'true'"
+                },
+                {
+                    "nextId": "0365e2b7-92fa-40f9-844e-ddcc2ce3ec48",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "InfoFalse"
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            }
+                        ]
+                    },
+                    "original": "InfoFalse = ''"
+                }
+            ]
+        },
+        {
+            "id": "4ef1ed00-26df-4bf3-851b-c7ff365646d5",
+            "type": "ROUTER",
+            "name": "bankinform",
+            "comment": "",
+            "x": 2697.045969602421,
+            "y": 944.0696946660329,
+            "nextId": "3d23a5da-3864-4cf2-a3c9-72d7685fdaed",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "bd9a8004-a5ef-4c21-b405-dbd644b0ab3f",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "bankinform"
+                            },
+                            {
+                                "t": "k",
+                                "v": "false"
+                            }
+                        ]
+                    },
+                    "original": "bankinform = 'false'"
+                },
+                {
+                    "nextId": "648be2e6-6a9c-46f2-867a-4546b7305b9f",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "bankinform"
+                            },
+                            {
+                                "t": "k",
+                                "v": "true"
+                            }
+                        ]
+                    },
+                    "original": "bankinform = 'true'"
+                },
+                {
+                    "nextId": "3d23a5da-3864-4cf2-a3c9-72d7685fdaed",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "bankinform"
+                            },
+                            {
+                                "t": "k",
+                                "v": ""
+                            }
+                        ]
+                    },
+                    "original": "bankinform = ''"
+                }
+            ]
+        },
+        {
+            "id": "4e873f44-f70c-4992-af17-dc31c7569f02",
+            "type": "SCREEN",
+            "name": "Не верные данные в ЕГР",
+            "comment": "",
+            "x": 809.7911732972905,
+            "y": 1069.9799130217345,
+            "nextId": "6069f761-bea4-4f8a-bb90-f7ce1a526552",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "К сожалению, Банк не может продолжить открытие счета. Рекомендуем Вам обратиться в налоговый орган для актуализации сведений о юридическом лице/ИП в связи с наличием в выписке из ЕГР информации о недостоверности сведений. Рассмотрение вопроса об открытии счета возможно по факту корректировки данных в ЕГР",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                }
+            ],
+            "visibility": [],
+            "hasBack": false,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "6069f761-bea4-4f8a-bb90-f7ce1a526552",
+            "type": "CALC",
+            "name": "sc_finish",
+            "comment": "",
+            "x": 971.0770520845538,
+            "y": 1066.1731391014027,
+            "nextId": "bf5c0a3c-3673-44a0-aed9-bcfad256625d",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "'Не достоверные сведения'",
+                    "expression": {
+                        "t": "k",
+                        "v": "Не достоверные сведения"
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "'3'",
+                    "expression": {
+                        "t": "k",
+                        "v": "3"
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "false",
+                    "expression": {
+                        "t": "b",
+                        "v": "b"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "31f7a468-df24-4608-9866-c5b98108293b",
+            "type": "SCREEN",
+            "name": "Нет данных",
+            "comment": "",
+            "x": 882.4790032226733,
+            "y": 834.9398156509086,
+            "nextId": "b918990f-656d-42ec-acc9-250f759a6f74",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Проведите проверку в выписке ЕГРЮЛ/ЕГРИП на наличие записи о Недостоверных сведениях. Присутствует запись о Недостоверных сведениях?",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 9,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "ButtonSelectorBlock",
+                    "props": [
+                        {
+                            "name": "options",
+                            "type": "array",
+                            "props": [
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Да"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "true"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Нет"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": [],
+                    "contextName": "unreliableInformation",
+                    "isRequired": true
+                }
+            ],
+            "visibility": [],
+            "hasBack": false,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "2ed6feca-61ca-4ff0-a59f-4b0d89878275",
+            "type": "SCREEN",
+            "name": "Запрос ручной проверки на ликвидацию",
+            "comment": "",
+            "x": 1156.3878164448045,
+            "y": 1235.245135158743,
+            "nextId": "fb42c307-24fb-4f8e-9971-2d34af487f70",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Проведите проверку в выписке ЕГРЮЛ/ЕГРИП на наличие записи о Ликвидации организации. Присутствует запись о Ликвидации?",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "ButtonSelectorBlock",
+                    "props": [
+                        {
+                            "name": "options",
+                            "type": "array",
+                            "props": [
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Да"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "true"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Нет"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": [],
+                    "contextName": "liquidation",
+                    "isRequired": true
+                }
+            ],
+            "visibility": [],
+            "hasBack": true,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "18f45467-afdd-4d28-9a79-82d53b407bc1",
+            "type": "SCREEN",
+            "name": "Ликвидация",
+            "comment": "",
+            "x": 1394.9212875483115,
+            "y": 1148.9616868538246,
+            "nextId": "64902071-4ea6-458c-b29e-996f54521cdb",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "К сожалению, банк не имеет возможности оказать Вам услуги по расчетно-кассовому обслуживанию в связи с наличием Вас в списке \"ликвидированных юридических лиц/прекративших деятельность индивидуальных предпринимателей",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                }
+            ],
+            "visibility": [],
+            "hasBack": false,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "64902071-4ea6-458c-b29e-996f54521cdb",
+            "type": "CALC",
+            "name": "sc_end2",
+            "comment": "",
+            "x": 1586.440121084156,
+            "y": 1136.8839225767895,
+            "nextId": "5d00300d-71a2-4d82-9281-7217d78d0004",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "'ЮЛ ликвидировано'",
+                    "expression": {
+                        "t": "k",
+                        "v": "ЮЛ ликвидировано"
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "'3'",
+                    "expression": {
+                        "t": "k",
+                        "v": "3"
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "false",
+                    "expression": {
+                        "t": "b",
+                        "v": "b"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "0365e2b7-92fa-40f9-844e-ddcc2ce3ec48",
+            "type": "SCREEN",
+            "name": "Запрос ручной проверки дискв. ЕИО",
+            "comment": "",
+            "x": 1978.1047626394416,
+            "y": 1273.1901194176157,
+            "nextId": "ec1d8bcd-fd7e-49d7-869a-d44689ab811f",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Проведите проверку в выписке ЕГРЮЛ на наличие записи о Дисквалификации ЕИО. Присутствует запись о Дисквалификации ЕИО?",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "ButtonSelectorBlock",
+                    "props": [
+                        {
+                            "name": "options",
+                            "type": "array",
+                            "props": [
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Да"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "true"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Нет"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": [],
+                    "contextName": "InfoFalse",
+                    "isRequired": true
+                }
+            ],
+            "visibility": [],
+            "hasBack": true,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "12ff5943-68f1-4141-b029-fdf4e3e9663d",
+            "type": "SCREEN",
+            "name": "Информирование о дисквалификации ЕИО",
+            "comment": "",
+            "x": 2217.934653283427,
+            "y": 1216.252087825878,
+            "nextId": "4f2a22ca-6f6d-4939-b550-d5965ca41cfd",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "К сожалению, банк не имеет возможности продолжить процедуру открытия счета, в связи с наличием у единоличного исполнительного органа Вашей организации  действующего решение о дисквалификации. К сожалению, мы не сможем открыть счет до момента отмены дисквалификации или избрания другого ЕИО. Посмотреть информацию о дисквалификации можно на официальном сайте ФНС России",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                }
+            ],
+            "visibility": [],
+            "hasBack": false,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "4f2a22ca-6f6d-4939-b550-d5965ca41cfd",
+            "type": "CALC",
+            "name": "sc_end",
+            "comment": "",
+            "x": 2395.650327645517,
+            "y": 1207.6251133422818,
+            "nextId": "73d724c5-bedf-453a-9ca9-ff386c84843e",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "'Недостоверные сведения ЕИО'",
+                    "expression": {
+                        "t": "k",
+                        "v": "Недостоверные сведения ЕИО"
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "'3'",
+                    "expression": {
+                        "t": "k",
+                        "v": "3"
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "false",
+                    "expression": {
+                        "t": "b",
+                        "v": "b"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "3d23a5da-3864-4cf2-a3c9-72d7685fdaed",
+            "type": "SCREEN",
+            "name": "Запрос ручной проверки по Банкинформ",
+            "comment": "",
+            "x": 2669.9881162238885,
+            "y": 1200.7235337554043,
+            "nextId": "4ef1ed00-26df-4bf3-851b-c7ff365646d5",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Необходимо провести ручные проверки в ИР БанкИнформ. По счету имеются действующие предписания федеральной налоговой службы?",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "ButtonSelectorBlock",
+                    "props": [
+                        {
+                            "name": "options",
+                            "type": "array",
+                            "props": [
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Да"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "true"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Нет"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": [],
+                    "contextName": "bankinform",
+                    "isRequired": true
+                }
+            ],
+            "visibility": [],
+            "hasBack": true,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "648be2e6-6a9c-46f2-867a-4546b7305b9f",
+            "type": "SCREEN",
+            "name": "Информирование об ограничениях Банкинформ",
+            "comment": "",
+            "x": 2877.035503830207,
+            "y": 1198.998138858685,
+            "nextId": "a87c019f-7075-4f11-903d-442af0d4f74e",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "К сожалению, у Вашей организации имеются действующие решения от налоговых/таможенных органов о приостановлении, поэтому Банк не может принять документы на открытие счета. Вам необходимо обратиться в ИФНС/ФТС для снятия ограничений. Информацию о действующих решениях налоговых органов можно получить на сайте ФНС либо на нашем сайте sberbank.ru/Малый бизнес/Банковское обслуживание/Аресты и взыскания. После урегулирования вопроса будем рады сотрудничеству с Вами",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                }
+            ],
+            "visibility": [],
+            "hasBack": false,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "a87c019f-7075-4f11-903d-442af0d4f74e",
+            "type": "CALC",
+            "name": "sc_bankinform",
+            "comment": "",
+            "x": 3058.201967985736,
+            "y": 1186.9203745816499,
+            "nextId": "8478afaa-7733-4e5b-95b8-fae6544c0f4d",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "'стоп по Банкинформ'",
+                    "expression": {
+                        "t": "k",
+                        "v": "стоп по Банкинформ"
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "'3'",
+                    "expression": {
+                        "t": "k",
+                        "v": "3"
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "false",
+                    "expression": {
+                        "t": "b",
+                        "v": "b"
+                    }
+                },
+                {
+                    "contextName": "new_param",
+                    "original": "'новый парамерт'",
+                    "expression": {
+                        "t": "k",
+                        "v": "новый парамерт"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "5462074a-13df-4133-8db1-97151cf76db6",
+            "type": "SCREEN",
+            "name": "Расхождение ЕГР с документами",
+            "comment": "",
+            "x": 1875.765069071572,
+            "y": 248.92364501586388,
+            "nextId": "4a35b52f-1140-4700-9986-ee44b5eb97fa",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "В связи с расхождением данных в выписке ЕГРЮЛ/ЕГРИП и предоставленными документами, продолжить открытие счета невозможно. Рекомендуйте Клиенту обратиться в ФНС для актуализации данных",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                }
+            ],
+            "visibility": [],
+            "hasBack": false,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "6380b54b-0989-4442-9c7b-4c66c45f1eb5",
+            "type": "SCREEN",
+            "name": "Предупреждение о нобходимости выгрузить ЕГР руками",
+            "comment": "",
+            "x": 0,
+            "y": 783.9961747601151,
+            "nextId": "6289ed05-f44c-4985-887f-74f55b43d00c",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Не удалось получить выписку.\n\nВыгрузите выписку ЕГРЮЛ/ЕГРИП в ручном режиме. Продолжить ввод данных клиента из выписки ЕГРЮЛ/ЕГРИП?",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                },
+                {
+                    "component": "ButtonSelectorBlock",
+                    "props": [
+                        {
+                            "name": "options",
+                            "type": "array",
+                            "props": [
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Да"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "true"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "object",
+                                    "props": [
+                                        {
+                                            "name": "label",
+                                            "type": "string",
+                                            "value": "Нет"
+                                        },
+                                        {
+                                            "name": "value",
+                                            "type": "string",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": [],
+                    "contextName": "continue_by_hand",
+                    "isRequired": true
+                }
+            ],
+            "visibility": [],
+            "hasBack": false,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "6289ed05-f44c-4985-887f-74f55b43d00c",
+            "type": "ROUTER",
+            "name": "Проверка на продолжение с ручной выгрузкой",
+            "comment": "",
+            "x": 189.73988712693097,
+            "y": 918.6382945638703,
+            "nextId": "e628c2d4-6050-4c41-980c-af3534ab9029",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "00d7f575-1496-4422-ac9a-5ec0bc1343df",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "continue_by_hand"
+                            },
+                            {
+                                "t": "k",
+                                "v": "true"
+                            }
+                        ]
+                    },
+                    "original": "continue_by_hand = 'true'"
+                }
+            ]
+        },
+        {
+            "id": "e628c2d4-6050-4c41-980c-af3534ab9029",
+            "type": "SCREEN",
+            "name": "Предупреждение о завершении обслуживания",
+            "comment": "",
+            "x": 182.7960175354126,
+            "y": 1064.4595559857555,
+            "nextId": "4d27954c-42b4-4637-85dd-2cebc3e60bb9",
+            "phase": null,
+            "phaseStart": null,
+            "widgets": [
+                {
+                    "component": "MarkdownBlock",
+                    "props": [
+                        {
+                            "value": "Обслуживание будет завершено. Продолжить?",
+                            "type": "string",
+                            "name": "markdown"
+                        }
+                    ],
+                    "rowNumber": 0,
+                    "width": 10,
+                    "offset": 1,
+                    "validators": []
+                }
+            ],
+            "visibility": [],
+            "hasBack": true,
+            "hasNext": true,
+            "backLabel": "Назад",
+            "nextLabel": "Далее",
+            "nextValidators": []
+        },
+        {
+            "id": "4d27954c-42b4-4637-85dd-2cebc3e60bb9",
+            "type": "CALC",
+            "name": "Отказ ручной выгрузки ЕГР",
+            "comment": "",
+            "x": 366.11417475149716,
+            "y": 1125.5656083911172,
+            "nextId": "1c70a580-3305-4397-9edc-246a50e62ef7",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "\"КМ не хочет руками\"",
+                    "expression": {
+                        "t": "k",
+                        "v": "КМ не хочет руками"
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "'3'",
+                    "expression": {
+                        "t": "k",
+                        "v": "3"
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "false",
+                    "expression": {
+                        "t": "b",
+                        "v": "b"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "bf5c0a3c-3673-44a0-aed9-bcfad256625d",
+            "type": "STOP",
+            "name": "Конец - недостоверные сведения",
+            "comment": "",
+            "x": 1143.0959586963763,
+            "y": 1108.263699156097,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "5d00300d-71a2-4d82-9281-7217d78d0004",
+            "type": "STOP",
+            "name": "Конец - ЮЛ ликвидировано",
+            "comment": "",
+            "x": 1773.6237503839075,
+            "y": 1179.6167287004132,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "73d724c5-bedf-453a-9ca9-ff386c84843e",
+            "type": "STOP",
+            "name": "Конец - недостоверные данные ЕИО",
+            "comment": "",
+            "x": 2580.3498395176075,
+            "y": 1239.3202840334127,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "8478afaa-7733-4e5b-95b8-fae6544c0f4d",
+            "type": "STOP",
+            "name": "Конец - ограничения Банкинформ",
+            "comment": "",
+            "x": 3231.264211074943,
+            "y": 1221.8460727164372,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "bd9a8004-a5ef-4c21-b405-dbd644b0ab3f",
+            "type": "CALC",
+            "name": "Всё хорошо",
+            "comment": "",
+            "x": 2906.535117434483,
+            "y": 910.2226375637083,
+            "nextId": "f2a5d835-ab25-4927-bb23-b3887bc5a807",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "sc_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "'3'",
+                    "expression": {
+                        "t": "k",
+                        "v": "3"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "'Всё хорошо, выходим в инструмент'",
+                    "expression": {
+                        "t": "k",
+                        "v": "Всё хорошо, выходим в инструмент"
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "false",
+                    "expression": {
+                        "t": "b",
+                        "v": "b"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "f2a5d835-ab25-4927-bb23-b3887bc5a807",
+            "type": "STOP",
+            "name": "Конец - всё хорошо",
+            "comment": "",
+            "x": 3092.9267048155543,
+            "y": 952.4519815797324,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "1c70a580-3305-4397-9edc-246a50e62ef7",
+            "type": "STOP",
+            "name": "Конец - КМ не хочет руками",
+            "comment": "",
+            "x": 547.5165896427964,
+            "y": 1170.8796230419255,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "9cd21199-9a72-4534-a429-cda8bf93b25b",
+            "type": "CALC",
+            "name": "Ошибка при ВКМ",
+            "comment": "",
+            "x": 1732.8505906442979,
+            "y": 518.5090672081753,
+            "nextId": "8ecea828-9145-405f-ad53-054769ab6194",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                },
+                {
+                    "contextName": "step",
+                    "original": "'3'",
+                    "expression": {
+                        "t": "k",
+                        "v": "3"
+                    }
+                },
+                {
+                    "contextName": "sc_response",
+                    "original": "'Всё плохо, но это ВКМ. Будет разбираться ЦКР'",
+                    "expression": {
+                        "t": "k",
+                        "v": "Всё плохо, но это ВКМ. Будет разбираться ЦКР"
+                    }
+                },
+                {
+                    "contextName": "req_send",
+                    "original": "false",
+                    "expression": {
+                        "t": "b",
+                        "v": "b"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "8ecea828-9145-405f-ad53-054769ab6194",
+            "type": "STOP",
+            "name": "Конец по ВКМ",
+            "comment": "",
+            "x": 1930.0912070236088,
+            "y": 562.6216359316429,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "8d6e216a-23c1-41a3-8c3a-f57eb35f5a12",
+            "type": "STOP",
+            "name": "Конец - ЕГР не совпал с документами",
+            "comment": "",
+            "x": 2254.7074407141517,
+            "y": 277.5929707381199,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "e8a40533-d4f5-4a8f-95a9-8c5a838f86ce",
+            "type": "STOP",
+            "name": "Конец сценария",
+            "comment": "",
+            "x": 1127.3368968743628,
+            "y": 475.5734055446149,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        }
+    ],
+    "macros": [],
+    "phases": []
+}

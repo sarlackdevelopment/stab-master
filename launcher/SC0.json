@@ -1,0 +1,121 @@
+{
+    "subject": "SC0",
+    "label": "SC0",
+    "blocks": [
+        {
+            "id": "9eb588fc-e82f-4328-9766-a6a5d7b65c11",
+            "type": "START",
+            "name": "Начало",
+            "comment": "",
+            "x": 50,
+            "y": 50,
+            "nextId": "e071cb2f-3471-43e3-80ba-adbdbe7c88f0",
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "e071cb2f-3471-43e3-80ba-adbdbe7c88f0",
+            "type": "ROUTER",
+            "name": "Выбор сценария",
+            "comment": "",
+            "x": 158,
+            "y": 31.720001220703125,
+            "nextId": "eaaa1aa7-b4ef-4f72-b481-063a374126a1",
+            "phase": null,
+            "phaseStart": null,
+            "routes": [
+                {
+                    "nextId": "ef4d299e-f961-4689-aa13-d814b59710dd",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "ext_task"
+                            },
+                            {
+                                "t": "k",
+                                "v": "Проверки"
+                            }
+                        ]
+                    },
+                    "original": "ext_task = 'Проверки'"
+                },
+                {
+                    "nextId": "4acb1809-c58d-4164-8b41-5dcb94f7ab2b",
+                    "expression": {
+                        "t": "j",
+                        "v": "g",
+                        "a": [
+                            {
+                                "t": "d",
+                                "v": "ext_task"
+                            },
+                            {
+                                "t": "k",
+                                "v": "Внутренние проверки"
+                            }
+                        ]
+                    },
+                    "original": "ext_task = 'Внутренние проверки'"
+                }
+            ]
+        },
+        {
+            "id": "ef4d299e-f961-4689-aa13-d814b59710dd",
+            "type": "CALC",
+            "name": "sc_checks",
+            "comment": "",
+            "x": 363,
+            "y": 90.72000122070312,
+            "nextId": "eaaa1aa7-b4ef-4f72-b481-063a374126a1",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_CHECKS"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "eaaa1aa7-b4ef-4f72-b481-063a374126a1",
+            "type": "STOP",
+            "name": "End",
+            "comment": "",
+            "x": 1003,
+            "y": 48.720001220703125,
+            "nextId": null,
+            "phase": null,
+            "phaseStart": null
+        },
+        {
+            "id": "4acb1809-c58d-4164-8b41-5dcb94f7ab2b",
+            "type": "CALC",
+            "name": "int_checks",
+            "comment": "",
+            "x": 363,
+            "y": 190.72000122070312,
+            "nextId": "eaaa1aa7-b4ef-4f72-b481-063a374126a1",
+            "phase": null,
+            "phaseStart": null,
+            "calculations": [
+                {
+                    "contextName": "next_scenario",
+                    "original": "'SC_INT_CHECKS'",
+                    "expression": {
+                        "t": "k",
+                        "v": "SC_INT_CHECKS"
+                    }
+                }
+            ]
+        }
+    ],
+    "macros": [],
+    "phases": []
+}
