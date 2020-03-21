@@ -137,10 +137,10 @@ app.get('/getResponses', (req, res) => {
 
 })
 
-app.get('/getLauncher', (req, res) => {
+app.post('/getLauncher', (req, res) => {
   res.json(require('./launcher/SC0.json'))
 })
 
-app.get('/mainScript', (req, res) => {
+app.post('/getScript', (req, res) => {
   res.json(require('./mainScript/SC_CHECKS.json'))
 })
