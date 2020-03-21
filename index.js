@@ -138,9 +138,9 @@ app.get('/getResponses', (req, res) => {
 })
 
 app.get('/getLauncher', (req, res) => {
-  res.json(require('./launcher/launcher.json'))
+  res.json(require('./launcher/SC0.json'))
 })
 
 app.get('/mainScript', (req, res) => {
-  res.json(require('./mainScript/mainScript.json'))
+  res.json(require('./mainScript/SC_CHECKS.json'))
 })
