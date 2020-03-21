@@ -112,14 +112,14 @@ app.get('/getResponses', (req, res) => {
 
     if (targetRequest == undefined) {
       res.json({
-        'data': {
+        //'data': {
           'success': false,
           'body': {
             'code': -1,
             'HTTP_Status': 200,
             'text': 'По указанным параметрам не найден клиент'
           }
-        }     
+        //}     
       });
     } else {
       res.json(targetRequest)
@@ -127,14 +127,14 @@ app.get('/getResponses', (req, res) => {
 
   } catch (e) {
     res.json({
-      'data': {
+      //'data': {
         'success': false,
         'body': {
           'code': 1,
           'HTTP_Status': 500,
           'text': e.message
         }
-      }     
+      //}     
     });
   }
 
